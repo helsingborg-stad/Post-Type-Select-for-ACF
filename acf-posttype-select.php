@@ -12,7 +12,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 // Reference: https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
-load_plugin_textdomain('acf-posttype_select', false, dirname(plugin_basename(__FILE__)) . '/lang/');
+add_action('init', function() {
+    load_plugin_textdomain('acf-posttype_select', false, dirname(plugin_basename(__FILE__)) . '/lang/');
+});
 
 // $version = 5 and can be ignored until ACF6 exists
 function include_field_types_posttype_select($version)
